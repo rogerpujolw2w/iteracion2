@@ -14,6 +14,28 @@ export class CommentsComponent implements OnInit {
   userName: string="";
 
 
+  cadena2 = 'aaa aaa aaa';
+
+  cadena = 'Esto es un literal.';
+   numero = 25895.396;
+   personas = [
+     {
+       id: '1',
+       nombre: 'Albert',
+       apellidos: 'García Carros'
+     },
+     {
+       id: '2',
+       nombre: 'Susana',
+       apellidos: 'Montes Gómez'
+     },
+     {
+       id: '3',
+       nombre: 'Carmen',
+       apellidos: 'Galeote Fernández'
+     }
+   ];
+
   /*
   comments: Array<any> = [
     {
@@ -45,6 +67,8 @@ export class CommentsComponent implements OnInit {
   commentTrackerFunction(index: number, comment: any) {
     return comment.id;
   }
+
+  fecha2 = Date.now();
 
   fecha:string;
 

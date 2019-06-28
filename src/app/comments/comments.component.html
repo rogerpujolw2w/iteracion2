@@ -45,9 +45,11 @@
 
           <input #newName class="form-control" placeholder="User" />
 
-          <input type="text" name="nombre" #name [(ngModel)] = "userName">
+          <input type="text" name="nombre" [(ngModel)] = "userName">
           <p> Hello {{userName}}</p>
+          <p> Hello {{userName | uppercase}}</p>
         </div>
+
 
         <div class="form-group">
           <label>Comment</label>
@@ -60,3 +62,37 @@
     </div>
   </div>
 </div>
+
+<div class='container'>
+  <h1>Ejemplos de Pipes</h1>
+  <p>&nbsp;</p>
+   <p>
+    Convertir a mayúsculas:<br>
+    Valor original: {{ cadena }}<br>
+    Valor convertido: {{ cadena|uppercase }}<br>
+  </p>
+   <p>
+    Convertir a minúsculas:<br>
+    Valor original: {{ cadena }}<br>
+    Valor convertido: {{ cadena|lowercase }}<br>
+  </p>
+   <p>
+    Formatear un número:<br>
+    Valor original: {{ numero }}<br>
+    Valor convertido: {{ numero|number :'3.2-2' :'es' }}<br>
+    Valor en euros: {{ numero|currency :'EUR' :true :'3.2-2' :'es' }}<br>
+  </p>
+   <p>
+    Serializar un JSON:<br>
+    Valor original: {{ personas }}<br>
+    Valor convertido: {{ personas | json }}<br>
+  </p>
+  <p>
+      {{fecha2 | date :'full' :'es'}}<br>
+      {{fecha2 | date :'full' :'+01:00' :'es'}}<br> <!-- GMT -->
+      Valor convertido: {{ cadena2 | capitalize }}<br>
+
+      Valor convertido: {{ cadena2 | smartTruncate : '8' }}<br>
+
+  </p>
+ </div>
