@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import {comments} from '../shared/data/comments.data';
+import { comments } from '../shared/data/comments.data';
 
 @Component({
   selector: 'app-comments',
@@ -11,6 +11,7 @@ export class CommentsComponent implements OnInit {
 
   public comments:Array<any>;
 
+  userName: string="";
 
 
   /*
@@ -85,6 +86,8 @@ addComment(event:any, formulario:any):void {
     comment: formulario[1].value,
     id: this.comments.length + 1
   }
+
+  formulario.reset();
 
   this.comments = [
     {

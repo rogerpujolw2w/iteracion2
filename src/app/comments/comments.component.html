@@ -7,9 +7,17 @@
   <div class="row">
     <div class="col-md-12">
 
+
+      <ng-template #nocoment><p [ngStyle]="{'color': 'red'}">Nothing</p></ng-template>
+
       <ul>
         <li *ngFor="let comment of comments, let i = index; trackBy:commentTrackerFunction" class="mb-2">
-          {{ i }} - {{ comment.id }} - {{ comment.name }} - {{ comment.comment }} - {{ comment.fecha }}</li>
+
+          <ng-container *ngIf="comment.name>'' && comment.comment>''; else nocoment;">
+          {{ i }} - {{ comment.id }} - {{ comment.name }} - {{ comment.comment }} - {{ comment.fecha }}
+          </ng-container>
+
+        </li>
       </ul>
 
       <!--
@@ -34,7 +42,11 @@
 
         <div class="form-group">
           <label>Name</label>
+
           <input #newName class="form-control" placeholder="User" />
+
+          <input type="text" name="nombre" #name [(ngModel)] = "userName">
+          <p> Hello {{userName}}</p>
         </div>
 
         <div class="form-group">
